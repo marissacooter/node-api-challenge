@@ -38,15 +38,20 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [x] Mention two parts of Express that you learned about this week.
+    A: There are four types of middleware in Express (Built-in middleware, Third-party, Custom, and Error middleware).
 
-- [ ] Describe Middleware?
+- [x] Describe Middleware?
+    A: Middleware is software that works between an operating system and the application. It's used for data management and communication for things such as security purposes and validation. 
 
-- [ ] Describe a Resource?
+- [x] Describe a Resource?
+    A: A resource is an object that contains a specific type of data that it related to eachother.
 
-- [ ] What can the API return to help clients know if a request was successful?
+- [x] What can the API return to help clients know if a request was successful?
+    A: The API can return status codes to let the user know if the request was successful, failed, or what it is missing specifically.
 
-- [ ] How can we partition our application into sub-applications?
+- [x] How can we partition our application into sub-applications?
+     A: By separating specific routes in the server and building routers in separate files we are able to have multiple sub-applications running at once. For example, a userRouter and a postRouter.
 
 ## Minimum Viable Product
 
