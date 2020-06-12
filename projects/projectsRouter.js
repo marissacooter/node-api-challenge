@@ -19,4 +19,20 @@ router.get('/', (req, res) => {
         })
 })
 
+// POST 
+router.post('/', (req, res) => {
+    const project = req.body
+    projects
+        .insert(project)
+        .then((data) => {
+            res.status(201).json(data)
+        })
+        .catch((error) => {
+            console.log(error)
+            res.status(500).json({
+                message: "Error adding project to the database."
+            })
+        })
+})
+
 module.exports = router;
