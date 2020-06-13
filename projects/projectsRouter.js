@@ -19,6 +19,22 @@ router.get('/', (req, res) => {
         })
 })
 
+// GET :id
+router.get('/:id', (req, res) => {
+    const id = req.params.id
+    projects
+        .get(id)
+        .then((data) => {
+            res.status(200).json(data)
+        })
+        .catch((error) => {
+            console.log(error)
+            res.status(500).json({
+                message: "Error retreiving project."
+            })
+        })
+})
+
 // POST 
 router.post('/', (req, res) => {
     const project = req.body
