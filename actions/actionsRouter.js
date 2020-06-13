@@ -73,5 +73,23 @@ router.put('/:id', (req, res) => {
         })
 })
 
+// DELETE
+router.delete('/:id', (req, res) => {
+    const id = req.params.id
+    actions
+        .remove(id)
+        .then((action) => {
+            res.status(200).json({
+                message: "The action has been deleted."
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+            res.status(500).json({
+                message: "Error deleting action."
+            })
+        })
+})
+
 
 module.exports = router 
