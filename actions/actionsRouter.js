@@ -3,6 +3,21 @@ const actions = require("../data/helpers/actionModel")
 
 const router = express.Router()
 
+// POST
+router.post('/', (req, res) => {
+    const action = req.body
+    actions
+        .insert(action)
+        .then((data) => {
+            res.status(201).json(action)
+        })
+        .catch((error) => {
+            res.status(500).json({
+                message: "Error adding action to the database."
+            })
+        })
+})
+
 // GET 
 router.get('/', (req, res) => {
     const id = req.params.id
