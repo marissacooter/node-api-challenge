@@ -93,5 +93,20 @@ router.delete('/:id', (req, res) => {
         })
 })
 
+// GET PROJECT ACTIONS
+router.get('/project-actions/:id', (req, res) => {
+    const projectId = req.params.id
+    projects
+        .getProjectActions(projectId)
+        .then((data) => {
+            res.status(200).json(data)
+        })
+        .catch((error) => {
+            console.log(error)
+            res.status(500).json({
+                message: "Error loading data."
+            })
+        })
+})
 
 module.exports = router;
