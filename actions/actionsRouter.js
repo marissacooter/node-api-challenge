@@ -34,5 +34,21 @@ router.get('/', (req, res) => {
         })
 })
 
+// GET :id
+router.get('/:id', (req, res) => {
+    const id = req.params.id
+    actions
+        .get(id)
+        .then((data) => {
+            res.status(200).json(data)
+        })
+        .catch((error) => {
+            console.log(error)
+            res.status(500).json({
+                message: "Error retrieving action."
+            })
+        })
+})
+
 
 module.exports = router 
